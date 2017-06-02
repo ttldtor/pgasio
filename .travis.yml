@@ -7,7 +7,7 @@ compiler:
     - clang
 
 services:
-  - postgresql
+    - postgresql
 
 env:
     - VARIANT=release BOOST=60
@@ -44,9 +44,9 @@ install:
     # We also need f5-threading for its channels support
     - git clone -b feature/channel https://github.com/KayEss/f5-threading.git
     # Check the database connection and create some tables and data we can use later on
-    psql --no-password -U postgres --version
-    psql -U postgres -c "\conninfo"
-    pgbench -U postgres
+    - psql --no-password -U postgres --version
+    - psql -U postgres -c "\conninfo"
+    - pgbench -U postgres
 
 script:
     - BOOST_BUILD_PATH=boost_1_${BOOST}_0/
