@@ -57,7 +57,7 @@ int main() {
         for ( char c : data ) std::cout << c;
         std::cout << std::endl;
     });
-    /// Finally run the corotine in this thread
+    /// Finally run the coroutine in this thread
     ios.run();
 
     return 0;

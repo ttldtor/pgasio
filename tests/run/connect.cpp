@@ -42,7 +42,7 @@ int main() {
             std::exit(1);
         }
     });
-    /// Finally run the corotine in this thread
+    /// Finally run the coroutine in this thread
     ios.run();
 
     return 0;
