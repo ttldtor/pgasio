@@ -43,12 +43,14 @@ install:
     - cd ..
     # We also need f5-threading for its channels support
     - git clone -b feature/channel https://github.com/KayEss/f5-threading.git
-    # Create some tables and data we can use lager on
+    # Check the database connection and create some tables and data we can use later on
+    psql --no-password -U postgres --version
+    psql -U postgres -c "\conninfo"
     pgbench -U postgres
 
 script:
     - BOOST_BUILD_PATH=boost_1_${BOOST}_0/
         ./boost_1_${BOOST}_0/bjam
-            toolset=$CC threading=multi -q
+            toolset=$CC threading=multi
             include=boost/include include=f5-threading/include search=boost/lib
             test examples examples/f5 ${VARIANT}
