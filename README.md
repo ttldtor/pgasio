@@ -64,7 +64,7 @@ The stats example is able to fetch multiple concurrent data sets in a single thr
 
 ### Testing pgasio
 
-Travis is used to test Boost libraries from 1.60.0 to 1.64.0 together with clang 4.0 and gcc.
+Travis is used to test Boost libraries from 1.60.0 to 1.64.0 together with clang 4.0.1 and gcc 6.3.0. Most development is done on Ubuntu with clang 4.0.0 and gcc 6.3.0.
 
 
 ## Using pgasio
