@@ -1,0 +1,21 @@
+import path ;
+import utility ;
+
+
+lib boost_coroutine : : <name>boost_coroutine ;
+lib boost_system : : <name>boost_system ;
+
+
+loc = tests/run/ ;
+
+rule sample ( name ) {
+    run $(name).cpp
+            boost_coroutine
+            boost_system
+        ;
+}
+
+for local cpp in [ path.glob $(loc) : *.cpp ] {
+    sample [ utility.basename $(cpp) ] ;
+}
+

@@ -16,5 +16,6 @@ project :
 
 alias test :
         tests/compile/include
+        tests/run
     ;
 explicit test ;
