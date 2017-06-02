@@ -46,7 +46,7 @@ install:
     # Check the database connection and create some tables and data we can use later on
     - psql --no-password -U postgres --version
     - psql -U postgres -c "\conninfo"
-    - pgbench -U postgres
+    - pgbench -U postgres -i
 
 script:
     - BOOST_BUILD_PATH=boost_1_${BOOST}_0/
