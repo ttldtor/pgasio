@@ -22,9 +22,7 @@ int main() {
     boost::asio::io_service ios;
     /// Spawn a coroutine to perform our database operations with
     boost::asio::spawn(ios, [&](auto yield) {
-        /// Open the connection to postgres. This creates a buffered unix
-        /// domain socket. The buffering makes a huge difference to
-        /// throughput, especially where rows don't contain much data
+        /// Open the connection to postgres.
         auto cnx = pgasio::handshake(
             pgasio::unix_domain_socket(ios, path, yield),
             user, database, yield);
