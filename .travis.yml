@@ -50,6 +50,7 @@ install:
 
 script:
     - BOOST_BUILD_PATH=boost_1_${BOOST}_0/
+        LOGNAME=postgres
         ./boost_1_${BOOST}_0/bjam
             toolset=$CC threading=multi
             include=boost/include include=f5-threading/include search=boost/lib
