@@ -6,6 +6,9 @@ compiler:
     - gcc
     - clang
 
+services:
+  - postgresql
+
 env:
     - VARIANT=release BOOST=60
     - VARIANT=debug BOOST=60
@@ -40,6 +43,8 @@ install:
     - cd ..
     # We also need f5-threading for its channels support
     - git clone -b feature/channel https://github.com/KayEss/f5-threading.git
+    # Create some tables and data we can use lager on
+    pgbench -U postgres
 
 script:
     - BOOST_BUILD_PATH=boost_1_${BOOST}_0/ ./boost_1_${BOOST}_0/bjam toolset=$CC threading=multi -q test examples examples/f5 ${VARIANT} include=boost/include include=f5-threading/include search=boost/lib
