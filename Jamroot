@@ -15,7 +15,7 @@ project :
     ;
 
 alias test :
+        tests/boost-coro
         tests/compile/include
-        tests/run
     ;
 explicit test ;

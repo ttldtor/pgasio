@@ -6,7 +6,7 @@ lib boost_coroutine : : <name>boost_coroutine ;
 lib boost_system : : <name>boost_system ;
 
 
-loc = tests/run/ ;
+loc = tests/boost-coro/ ;
 
 rule sample ( name ) {
     run $(name).cpp
